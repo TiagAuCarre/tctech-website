@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TON_USER_GITHUB/TON_REPO
+  repo: TiagAuCarre/tctech-website
   branch: main
 
 media_folder: "assets"
@@ -10,9 +10,9 @@ collections:
   - name: "site"
     label: "Site"
     files:
-      - name: "home"
-        label: "Page d'accueil"
-        file: "index.html"
+      - file: "index.html"
+        label: "Home"
+        name: "home"
         fields:
           - label: "Contenu"
             name: "body"
