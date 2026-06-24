@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: TON_USER_GITHUB/TON_REPO
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "site"
+    label: "Site"
+    files:
+      - name: "home"
+        label: "Page d'accueil"
+        file: "index.html"
+        fields:
+          - label: "Contenu"
+            name: "body"
+            widget: "text"
