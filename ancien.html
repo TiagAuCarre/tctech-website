@@ -256,21 +256,14 @@ header.scrolled .header-pill {
 .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; margin-bottom: 10px; }
 .section-sub { opacity: 0.6; font-size: 1rem; margin-bottom: 48px; }
 
-/* ===== SERVICES TOP ===== */
+/* ===== SERVICES TOP 3 ===== */
 .services-top { padding: 80px 0 60px; position: relative; z-index: 2; }
-
-/* Grille 4 colonnes pour les services phares */
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
 .service-card { padding: 32px 28px; border-radius: 24px; transition: 0.3s; cursor: default; }
 .service-card:hover { transform: translateY(-8px); border-color: rgba(212,160,23,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
 .service-icon { width: 46px; height: 46px; color: var(--mustard); margin-bottom: 16px; }
-.service-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
-.service-card p { opacity: 0.65; font-size: 0.88rem; line-height: 1.55; margin-bottom: 20px; }
+.service-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+.service-card p { opacity: 0.65; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; }
 .btn-link { color: var(--mustard); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; transition: 0.2s; }
 .btn-link:hover { gap: 10px; }
 .services-center { text-align: center; margin-top: 40px; }
@@ -406,10 +399,10 @@ header.scrolled .header-pill {
 /* ===== MODAL ===== */
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(14px); z-index: 5000; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .modal-overlay.active { opacity: 1; pointer-events: all; }
-.modal-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(212,160,23,0.15); backdrop-filter: blur(32px); border-radius: 28px; width: 100%; max-width: 760px; max-height: 65vh; display: flex; flex-direction: column; box-shadow: 0 30px 80px rgba(0,0,0,0.5); position: relative; }
-.modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: rgba(245,242,237,0.5); font-size: 1.2rem; font-weight: 300; cursor: pointer; transition: color 0.2s; z-index: 20; line-height: 1; padding: 4px; }
+.modal-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(212,160,23,0.15); backdrop-filter: blur(32px); border-radius: 28px; width: 100%; max-width: 760px; max-height: 82vh; display: flex; flex-direction: column; box-shadow: 0 30px 80px rgba(0,0,0,0.5); position: relative; }
+.modal-close { position: absolute; top: 18px; right: 20px; background: none; border: none; color: rgba(245,242,237,0.5); font-size: 1.4rem; font-weight: 300; cursor: pointer; transition: color 0.2s; z-index: 20; line-height: 1; padding: 0; }
 .modal-close:hover { color: var(--mustard); }
-.modal-scroll { overflow-y: auto; overflow-x: hidden; padding: 44px 48px 40px; scrollbar-width: thin; scrollbar-color: rgba(212,160,23,0.3) transparent; border-radius: 28px; max-height: 65vh; }
+.modal-scroll { overflow-y: auto; overflow-x: hidden; padding: 44px 48px 40px; scrollbar-width: thin; scrollbar-color: rgba(212,160,23,0.3) transparent; border-radius: 28px; }
 .modal-scroll::-webkit-scrollbar { width: 4px; }
 .modal-scroll::-webkit-scrollbar-thumb { background: rgba(212,160,23,0.3); border-radius: 4px; }
 .modal-box h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 6px; padding-right: 30px; }
@@ -443,14 +436,11 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
 .shop-page.active { display: flex; }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 900px) {
   .nav { display: none; }
   .burger-btn { display: block; }
   .header-contact-btn { display: none; }
-  .grid-4, .testi-grid, .contact-grid { grid-template-columns: 1fr; }
+  .grid-3, .testi-grid, .contact-grid { grid-template-columns: 1fr; }
   .grid-2, .about-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2,1fr); }
   .services-list { grid-template-columns: 1fr; }
@@ -531,43 +521,31 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
   <canvas class="wave-canvas" data-speed1="0.015" data-speed2="-0.010" data-speed3="0.008"></canvas>
 </div>
 
-<!-- ===== SERVICES TOP ===== -->
+<!-- ===== SERVICES TOP 3 ===== -->
 <section class="services-top" id="services">
   <div class="container">
     <span class="section-label">Nos services phares</span>
     <h2 class="section-title">Ce qu'on fait le mieux</h2>
-    <p class="section-sub">Les interventions les plus demandées.</p>
-    <div class="grid-4">
-
+    <p class="section-sub">Les 3 interventions les plus demandées.</p>
+    <div class="grid-3">
       <div class="service-card glass glass-glow float2">
         <i data-lucide="laptop" class="service-icon"></i>
         <h3>Réparation PC</h3>
         <p>Lenteur, virus, écran bleu, réinstallation Windows ou Linux — on diagnostique et répare rapidement.</p>
         <a href="#tous-services" class="btn-link">En savoir plus <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
       </div>
-
       <div class="service-card glass glass-glow float1">
         <i data-lucide="smartphone" class="service-icon"></i>
         <h3>Téléphones & Mobiles</h3>
         <p>Configuration, transfert de données, récupération de compte — iPhone ou Android.</p>
         <a href="#tous-services" class="btn-link">En savoir plus <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
       </div>
-
       <div class="service-card glass glass-glow float3">
         <i data-lucide="wifi" class="service-icon"></i>
         <h3>Réseau & Sécurité</h3>
         <p>Box, Wi-Fi, caméras de surveillance, NAS sécurisé — votre domicile numérique optimisé.</p>
         <a href="#tous-services" class="btn-link">En savoir plus <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
       </div>
-
-      <!-- ===== NOUVEAU SERVICE : MONTAGE PC ===== -->
-      <div class="service-card glass glass-glow float2">
-        <i data-lucide="cpu" class="service-icon"></i>
-        <h3>Montage PC sur mesure</h3>
-        <p>Petit budget ou setup gaming haut de gamme — on vous aide à choisir les composants et on assemble votre PC de A à Z.</p>
-        <a href="#tous-services" class="btn-link">En savoir plus <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></a>
-      </div>
-
     </div>
     <div class="services-center">
       <a href="#tous-services" class="btn-outline">Voir tous nos services</a>
@@ -667,7 +645,6 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
       <div class="faq-item glass glass-glow"><div class="faq-question" onclick="toggleFaq(this)">Mes données sont-elles en sécurité ?<i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer"><p>Absolument. On conseille toujours de faire une sauvegarde avant toute intervention. Vos données ne quittent jamais votre environnement sans votre accord.</p></div></div>
       <div class="faq-item glass glass-glow"><div class="faq-question" onclick="toggleFaq(this)">Je ne suis pas très tech, est-ce un problème ?<i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer"><p>Au contraire ! On explique tout simplement, sans jugement. Nos clients les plus satisfaits sont souvent ceux qui pensaient "ne rien comprendre à la tech".</p></div></div>
       <div class="faq-item glass glass-glow"><div class="faq-question" onclick="toggleFaq(this)">Que couvre la garantie 14 jours ?<i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer"><p>Si le même problème réapparaît dans les 14 jours calendaires, on revient le régler gratuitement. Ça ne couvre pas les nouveaux problèmes apparus après.</p></div></div>
-      <div class="faq-item glass glass-glow"><div class="faq-question" onclick="toggleFaq(this)">Vous pouvez m'aider à choisir et monter un PC ?<i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer"><p>Absolument ! Que vous ayez 300€ ou 1500€ de budget, on vous conseille les meilleurs composants et on assemble votre PC de A à Z. Pas besoin d'y connaître quoi que ce soit.</p></div></div>
     </div>
   </div>
 </section>
@@ -700,10 +677,6 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
       <div class="serv-item glass glass-glow"><i data-lucide="hard-drive" class="serv-item-icon"></i><div><h4>Stockage NAS à domicile</h4><p>Votre cloud maison : sauvegarde automatique, accessible depuis tous vos appareils, sans abonnement.</p><div class="serv-sub"><span class="serv-tag">NAS maison</span><span class="serv-tag">Sauvegarde auto</span><span class="serv-tag">Accès à distance</span></div></div></div>
       <div class="serv-item glass glass-glow"><i data-lucide="headphones" class="serv-item-icon"></i><div><h4>Assistance & Accompagnement</h4><p>Formulaire en ligne, logiciel inconnu, arnaque à éviter — on explique calmement, sans jugement.</p><div class="serv-sub"><span class="serv-tag">Aide en ligne</span><span class="serv-tag">Formation débutant</span><span class="serv-tag">À distance</span></div></div></div>
       <div class="serv-item glass glass-glow"><i data-lucide="server" class="serv-item-icon"></i><div><h4>Services avancés</h4><p>PC gaming sur mesure, Proxmox, Home Assistant, scripts et automatisation — on adore ces projets.</p><div class="serv-sub"><span class="serv-tag">PC Gaming</span><span class="serv-tag">Proxmox</span><span class="serv-tag">Home Assistant</span></div></div></div>
-
-      <!-- ===== NOUVEAU SERVICE : MONTAGE PC ===== -->
-      <div class="serv-item glass glass-glow"><i data-lucide="package" class="serv-item-icon"></i><div><h4>Montage PC sur mesure</h4><p>Vous avez un budget serré ou un projet gaming ambitieux ? On vous aide à trouver les meilleurs composants et on assemble votre PC de zéro. Adapté à tous les budgets.</p><div class="serv-sub"><span class="serv-tag">Petit budget</span><span class="serv-tag">PC Gaming</span><span class="serv-tag">Choix composants</span><span class="serv-tag">Assemblage</span><span class="serv-tag">Conseil personnalisé</span></div></div></div>
-
       <div class="serv-item glass glass-glow"><i data-lucide="home" class="serv-item-icon"></i><div><h4>Intervention à domicile</h4><p>On se déplace chez vous en local. On intervient sur place, proprement et efficacement.</p><div class="serv-sub"><span class="serv-tag">Déplacement local</span><span class="serv-tag">Sur place</span><span class="serv-tag">Particuliers</span></div></div></div>
     </div>
   </div>
@@ -741,7 +714,6 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
               <select id="fieldService">
                 <option value="">Sélectionnez un service</option>
                 <option>Réparation PC</option>
-                <option>Montage PC sur mesure</option>
                 <option>Smartphone & Mobile</option>
                 <option>Réseau & Internet</option>
                 <option>Caméras de surveillance</option>
@@ -839,7 +811,7 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
       <h2>Conditions <span>Générales d'Utilisation</span></h2>
       <span class="modal-date">En vigueur au 1er janvier 2025</span>
       <h3>1. Présentation</h3><p>Le site T&C TECH est édité par Tiago et Clément, deux particuliers proposant des services d'assistance informatique à titre indépendant.</p>
-      <h3>2. Services proposés</h3><p>T&C TECH propose des prestations d'assistance, de dépannage et d'accompagnement informatique : réparation de PC, montage PC sur mesure, configuration de téléphones, installation de réseaux, de caméras et de NAS.</p>
+      <h3>2. Services proposés</h3><p>T&C TECH propose des prestations d'assistance, de dépannage et d'accompagnement informatique : réparation de PC, configuration de téléphones, installation de réseaux, de caméras et de NAS.</p>
       <h3>3. Devis et tarification</h3><p>Tout devis est gratuit, sans engagement, communiqué par mail avant toute intervention.</p>
       <h3>4. Garantie de ré-intervention</h3><p>T&C TECH s'engage à ré-intervenir gratuitement si le problème réapparaît dans les <strong>14 jours calendaires</strong> suivant l'intervention.</p>
       <h3>5. Responsabilité</h3><p>En cas de panne préexistante non détectable, T&C TECH ne saurait être tenu responsable d'une perte de données. Une sauvegarde préalable est fortement conseillée.</p>
@@ -955,6 +927,8 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
     }
     @keyframes orbFloat  { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-20px) scale(1.1)} 66%{transform:translate(-20px,15px) scale(0.95)} }
     @keyframes orbFloat2 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-25px,20px) scale(0.9)} 66%{transform:translate(20px,-15px) scale(1.05)} }
+    @keyframes typing { from{width:0} to{width:100%} }
+    @keyframes caretBlink { 0%,100%{border-color:var(--mustard)} 50%{border-color:transparent} }
     @keyframes particleDrift {
       0%   { transform:translate(0,0) scale(1); opacity:0; }
       10%  { opacity:1; }
@@ -991,7 +965,29 @@ footer { padding: 60px 0 36px; background: linear-gradient(180deg, transparent, 
     .shop-back-btn svg { width:18px; height:18px; transition:transform 0.3s; }
     .shop-back-btn:hover svg { transform:translateX(-4px); }
     .shop-line { width:60px; height:2px; background:linear-gradient(90deg,transparent,var(--mustard),transparent); margin:0 auto 32px; opacity:0.5; }
-    .particle { position:absolute; width:4px; height:4px; border-radius:50%; background:var(--mustard); pointer-events:none; z-index:1; animation:particleDrift var(--dur) ease-out forwards; }
+
+    /* Particules */
+    .particle {
+      position:absolute; width:4px; height:4px;
+      border-radius:50%; background:var(--mustard);
+      pointer-events:none; z-index:1;
+      animation:particleDrift var(--dur) ease-out forwards;
+    }
+
+    /* Modal styles améliorés */
+    .modal-box {
+      background: rgba(255,255,255,0.02) !important;
+      max-height: 65vh !important;
+    }
+    .modal-scroll {
+      max-height: 65vh;
+    }
+    .modal-close {
+      top: 14px !important;
+      right: 16px !important;
+      font-size: 1.2rem !important;
+      padding: 4px !important;
+    }
   </style>
 
   <div class="shop-orb shop-orb-1"></div>
@@ -1056,12 +1052,26 @@ window.addEventListener('scroll', () => {
   const scrollY   = window.scrollY;
   const maxScroll = document.body.scrollHeight - window.innerHeight;
   const progress  = (scrollY / maxScroll) * 100;
+
+  // Progress bar
   document.getElementById('scrollProgress').style.width = progress + '%';
+
+  // Navbar scroll
   document.getElementById('mainHeader').classList.toggle('scrolled', scrollY > 40);
+
+  // Scroll to top button
   const btn = document.getElementById('scrollTop');
-  btn.style.opacity      = scrollY > 400 ? '1' : '0';
-  btn.style.pointerEvents = scrollY > 400 ? 'all' : 'none';
-  document.getElementById('scrollIndicator').style.opacity = scrollY > 100 ? '0' : '0.6';
+  if (scrollY > 400) {
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'all';
+  } else {
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
+  }
+
+  // Scroll indicator hero
+  const indicator = document.getElementById('scrollIndicator');
+  indicator.style.opacity = scrollY > 100 ? '0' : '0.6';
 });
 
 // Scroll dot animation
@@ -1130,6 +1140,7 @@ function copyEmail() {
     const toast = document.getElementById('toast');
     toast.style.transform  = 'translateX(-50%) translateY(0)';
     toast.style.opacity    = '1';
+    toast.style.pointerEvents = 'none';
     setTimeout(() => {
       toast.style.transform = 'translateX(-50%) translateY(80px)';
       toast.style.opacity   = '0';
@@ -1139,39 +1150,53 @@ function copyEmail() {
 
 // ===== VAGUES CANVAS =====
 const mustardColor = 'rgba(212, 160, 23,';
+
 function initWave(canvas) {
   const ctx = canvas.getContext('2d');
   const s1 = parseFloat(canvas.dataset.speed1 || '0.015');
   const s2 = parseFloat(canvas.dataset.speed2 || '-0.010');
   const s3 = parseFloat(canvas.dataset.speed3 || '0.008');
-  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
   resize();
   window.addEventListener('resize', resize);
+
   const ribbons = [
     { speed: s3, amplitude: 13, thickness: 28, centerY: 0.5,  alpha: 0.25, phase: Math.PI * 1.2 },
     { speed: s2, amplitude: 10, thickness: 22, centerY: 0.45, alpha: 0.45, phase: Math.PI * 0.6 },
     { speed: s1, amplitude: 13, thickness: 28, centerY: 0.5,  alpha: 0.90, phase: 0 },
   ];
+
   let time = 0;
+
   function drawRibbon(ribbon) {
-    const W = canvas.width, H = canvas.height;
-    const centerY = H * ribbon.centerY;
+    const W = canvas.width;
+    const H = canvas.height;
+    const centerY   = H * ribbon.centerY;
+    const amp       = ribbon.amplitude;
+    const thick     = ribbon.thickness;
     const frequency = (2 * Math.PI) / W * 0.8;
+
     ctx.beginPath();
     for (let x = 0; x <= W; x++) {
       const angle = frequency * x + ribbon.phase + time * ribbon.speed;
-      const y = centerY - ribbon.amplitude * Math.sin(angle) - ribbon.thickness / 2;
-      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      const y = centerY - amp * Math.sin(angle) - thick / 2;
+      if (x === 0) ctx.moveTo(x, y);
+      else         ctx.lineTo(x, y);
     }
     for (let x = W; x >= 0; x--) {
       const angle = frequency * x + ribbon.phase + time * ribbon.speed + 0.4;
-      const y = centerY - ribbon.amplitude * Math.sin(angle) + ribbon.thickness / 2;
+      const y = centerY - amp * Math.sin(angle) + thick / 2;
       ctx.lineTo(x, y);
     }
     ctx.closePath();
     ctx.fillStyle = mustardColor + ribbon.alpha + ')';
     ctx.fill();
   }
+
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ribbons.forEach(r => drawRibbon(r));
@@ -1224,16 +1249,18 @@ async function submitForm(e) {
   }
 }
 
-// ===== MODALS =====
+// ===== MODALS — navbar désactivée pendant ouverture =====
 function openModal(id) {
   document.getElementById('modal-' + id).classList.add('active');
   document.body.style.overflow = 'hidden';
+  // Désactive la navbar
   document.getElementById('mainHeader').style.pointerEvents = 'none';
   document.getElementById('mainHeader').style.opacity = '0.3';
 }
 function closeModal(id) {
   document.getElementById('modal-' + id).classList.remove('active');
   document.body.style.overflow = '';
+  // Réactive la navbar
   document.getElementById('mainHeader').style.pointerEvents = '';
   document.getElementById('mainHeader').style.opacity = '1';
 }
@@ -1262,6 +1289,7 @@ document.addEventListener('keydown', e => {
 function triggerEaster() { document.getElementById('easterEgg').classList.add('active');    document.body.style.overflow = 'hidden'; }
 function closeEaster()   { document.getElementById('easterEgg').classList.remove('active'); document.body.style.overflow = ''; }
 
+// Easter egg clavier : "tctech"
 let easterBuffer = '';
 document.addEventListener('keydown', e => {
   easterBuffer += e.key.toLowerCase();
@@ -1269,6 +1297,7 @@ document.addEventListener('keydown', e => {
   if (easterBuffer.length > 10) easterBuffer = easterBuffer.slice(-10);
 });
 
+// Easter egg Konami code : ↑↑↓↓←→←→ba
 const konami = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
 let konamiIndex = 0;
 document.addEventListener('keydown', e => {
@@ -1276,26 +1305,34 @@ document.addEventListener('keydown', e => {
     konamiIndex++;
     if (konamiIndex === konami.length) {
       konamiIndex = 0;
+      // Flash doré sur tout le body
       document.body.style.animation = 'konamiFlash 0.8s ease';
       setTimeout(() => { document.body.style.animation = ''; }, 800);
       triggerEaster();
     }
-  } else { konamiIndex = 0; }
+  } else {
+    konamiIndex = 0;
+  }
 });
 
+// Easter egg : clic 5 fois sur le logo
 let logoClicks = 0;
 document.querySelector('.logo').addEventListener('click', () => {
   logoClicks++;
-  if (logoClicks >= 5) { logoClicks = 0; triggerEaster(); }
+  if (logoClicks >= 5) {
+    logoClicks = 0;
+    triggerEaster();
+  }
   setTimeout(() => { logoClicks = 0; }, 2000);
 });
 
-// ===== BOUTIQUE =====
+// ===== BOUTIQUE + ANCRE =====
 function showShop(e) {
   if (e) e.preventDefault();
   document.getElementById('shopPage').classList.add('active');
   document.body.style.overflow = 'hidden';
   history.pushState(null, '', '#boutique');
+  // Particules au lancement
   spawnParticles();
 }
 function hideShop() {
@@ -1311,6 +1348,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Particules dorées sur la page boutique
 function spawnParticles() {
   const shop = document.getElementById('shopPage');
   for (let i = 0; i < 18; i++) {
@@ -1322,8 +1360,8 @@ function spawnParticles() {
       p.style.setProperty('--px', Math.cos(angle) * dist + 'px');
       p.style.setProperty('--py', Math.sin(angle) * dist + 'px');
       p.style.setProperty('--dur', (1.5 + Math.random() * 2) + 's');
-      p.style.left   = (40 + Math.random() * 20) + '%';
-      p.style.top    = (40 + Math.random() * 20) + '%';
+      p.style.left = (40 + Math.random() * 20) + '%';
+      p.style.top  = (40 + Math.random() * 20) + '%';
       p.style.opacity = '0';
       p.style.width  = (2 + Math.random() * 4) + 'px';
       p.style.height = p.style.width;
